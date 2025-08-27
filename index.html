@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADITHYA.EXE - Hacker Terminal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono:wght@400&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="matrix-bg"></div>
+    <div class="scanlines"></div>
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Instruction Screen -->
+    <div id="instruction-screen" class="instruction-screen">
+        <div class="instruction-container">
+            <div class="hacker-header">
+                <div class="status-indicators">
+                    <span class="status-dot online"></span>
+                    <span class="status-text">WAIT FOR ACCESS </span>
+                </div>
+                <h1 class="hacker-title">HACKER TERMINAL </h1>
+                <div class="system-time" id="system-time"></div>
+            </div>
+            
+            <div class="instruction-box">
+                <pre class="instruction-text">
+╔══════════════════════════════════════════════════════════════╗
+║           WELCOME TO ADITHYA'S Portfolio Terminal            ║
+╠══════════════════════════════════════════════════════════════╣
+║                                                              ║
+║  AVAILABLE COMMANDS:                                         ║
+║  ├─ help           → Show all commands                       ║
+║  ├─ about          → Personal information                    ║
+║  ├─ skills         → Technical abilities                     ║
+║  ├─ experience     → Work history                            ║
+║  ├─ education      → Academic background                     ║
+║  ├─ contact        → Communication channels                  ║
+║  └─ clear          → Clear screen                            ║
+║                                                              ║
+║  KEYBOARD SHORTCUTS:                                         ║
+║  ├─ ↑↓ Arrow Keys  → Command history navigatio n             ║
+║  ├─ Tab            → Auto-complete commands                  ║
+║  └─ Ctrl+L         → Clear terminal                          ║
+║                                                              ║
+║  QUICK START:                                                ║
+║  Try typing: help, about, skills, contact                    ║
+║                                                              ║
+║  STATUS: System ready for interaction                        ║
+║                                                              ║
+║          Press [ENTER] or click anywhere to start           ║
+╚══════════════════════════════════════════════════════════════╝
+                </pre>
+            </div>
+            
+            <div class="start-prompt">
+                <span class="blinking">▶ PRESS ANY KEY TO ACCESS TERMINAL</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Terminal Interface -->
+    <div id="main-terminal" class="main-terminal hidden">
+        <div class="terminal-layout">
+            <!-- Left Profile Panel -->
+            <div class="profile-panel">      
+                <div class="profile-image-container">
+                    <div class="profile-frame">
+                        <div class="profile-image" id="profile-image">
+                               <img src="profile.jpg" alt="Adithya Ashok Menashinakai" class="profile-image" />
+                        </div>
+                        <div class="hologram-overlay"></div>
+                        <div class="scan-effect"></div>
+                    </div>
+                </div>
+                
+                <div class="user-info">
+                    <div class="info-item">
+                        <span class="info-label">USER:</span>
+                        <span class="info-value">ADITHYA MENASHINAKAI</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">ROLE:</span>
+                        <span class="info-value">FULL STACK DEV</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">LOCATION:</span>
+                        <span class="info-value">DHARWAD, KARNATAKA</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">STATUS:</span>
+                        <span class="info-value status-online">● ONLINE</span>
+                    </div>
+                </div>
+                
+                <div class="system-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">UPTIME:</span>
+                        <span class="stat-value" id="uptime">00:00:00</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">CONNECTIONS:</span>
+                        <span class="stat-value">SECURE</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">SYSTEM:</span>
+                        <span class="stat-value">OPTIMAL</span>
+                    </div>
+                </div>
+                
+                <div class="network-status">
+                    <div class="network-indicator">
+                        <div class="network-bars">
+                            <div class="bar active"></div>
+                            <div class="bar active"></div>
+                            <div class="bar active"></div>
+                            <div class="bar active"></div>
+                        </div>
+                        <span class="network-text">SIGNAL STRONG</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Terminal Area -->
+            <div class="terminal-area">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <div class="control-btn close"></div>
+                        <div class="control-btn minimize"></div>
+                        <div class="control-btn maximize"></div>
+                    </div>
+                    <div class="terminal-title">PORTFOLIO_TERMINAL.EXE</div>
+                    <div class="terminal-status">
+                        <span id="current-time"></span>
+                    </div>
+                </div>
+                
+                <div class="terminal-body" id="terminal-body">
+                    <div id="terminal-output" class="terminal-output"></div>
+                    <div class="input-line">
+                        <span class="prompt">adithya@portfolio:~$</span>
+                        <input type="text" id="command-input" class="command-input" autocomplete="off" spellcheck="false">
+                        <span class="cursor-blink">█</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
